@@ -27,7 +27,7 @@ import os
 from dotenv import load_dotenv
 from langchain_community.chat_models import ChatZhipuAI
 # 导入 API Key
-load_dotenv(r"C:\Users\12279\ZHIPU.env")
+load_dotenv("ZHIPU.env")
 api_key = os.getenv('API_KEY')
 llm_ML = ChatZhipuAI(model="glm-4-air-250414",api_key=api_key,temperature=0.6)
 #--------------------------------------------------

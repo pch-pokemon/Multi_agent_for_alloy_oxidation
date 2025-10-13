@@ -24,7 +24,7 @@ import os
 from dotenv import load_dotenv
 from langchain_community.chat_models import ChatZhipuAI
 # 导入 API Key
-load_dotenv('C:/Users/12279/ZHIPU.env')
+load_dotenv("ZHIPU.env")
 api_key = os.getenv('API_KEY')
 
 #-------------------------------
@@ -34,7 +34,7 @@ api_key = os.getenv('API_KEY')
 我们强烈建议在 没有使用 微调专业知识领域的llm时，为协调者设置为最高级的llm, 如GPT-5。作为大脑角色，其是思考设计问题如何解决的核心人物。
 """
 from langchain_openai import ChatOpenAI
-# load_dotenv('C:/Users/12279/OPENAI.env')
+# load_dotenv('OPENAI.env')
 # openai_api_key = os.getenv('API_KEY')
 # llm_supervisor = ChatOpenAI(model="gpt-5",temperature=0.5,api_key= openai_api_key, base_url="https://api.chatanywhere.tech/v1") # ★ 核心 llm
  
