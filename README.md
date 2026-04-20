@@ -1,3 +1,57 @@
+# High-Temperature Alloy Oxidation Multi-Agent System V1.0
+
+This software is a knowledge-guided multi-agent system designed for intelligent prediction, mechanistic interpretation, thermodynamic analysis, and literature-grounded reasoning of oxidation behavior in high-temperature superalloys.
+
+Unlike conventional tool-based frameworks, the system organizes the oxidation research process into a structured multi-agent workflow, enabling the transformation of fragmented mechanistic knowledge into design-relevant insights.
+
+## System Architecture
+
+The system is coordinated by a central Supervisor and consists of five specialized agents:
+
+### (1) Machine Learning Agent (ML_agent)
+- Predicts oxidation mass gain (mg/cm²) and kinetic parameters
+- Supports single prediction, batch prediction, and CSV-based evaluation
+- Provides composition-resolved oxidation trends
+
+### (2) Thermodynamic Agent (Thermo_agent)
+- Provides thermodynamic properties of oxides (ΔG, pO₂, equilibrium constants)
+- Supports interpolation, extrapolation, and compositional scanning
+- Ensures physical consistency of predicted oxidation behavior
+
+### (3) RAG Knowledge Agent (RAG_agent)
+- Retrieves and aggregates literature evidence related to oxidation mechanisms
+- Supports multi-modal outputs (figures, tables, references)
+- Maintains traceable evidence linkage
+
+### (4) Mechanistic Analysis Agent (Mechanism_agent)
+- Extracts and organizes mechanistic knowledge from literature
+- Identifies element roles, interactions, and inconsistencies
+- Bridges fragmented literature into interpretable knowledge structures
+- Enables hypothesis generation (e.g., compositional boundaries)
+
+### (5) Reference Agent (Ref_agent)
+- Recommends relevant scientific literature
+- Outputs titles, key findings, and DOI links
+- Ensures reliability using curated local database
+
+## Coordination Strategy
+
+The Supervisor dynamically determines which agents to invoke based on user queries and task requirements. 
+
+It does not perform inference itself, but orchestrates the workflow to:
+- combine predictions
+- validate thermodynamics
+- retrieve supporting evidence
+- construct mechanistic explanations
+
+## Application Scenarios
+
+- Oxidation behavior prediction
+- Mechanism interpretation and hypothesis generation
+- Thermodynamic analysis of alloy systems
+- Literature-supported materials design
+
+
 高温合金氧化行为多智能体知识问答与预测系统V1.0
 
 本软件为高温合金氧化行为多智能体知识问答与预测系统，其核心目标是针对高温合金的氧化行为提供智能化的预测、机理解释、热力学数据查询及文献推荐支持。
