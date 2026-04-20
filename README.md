@@ -23,7 +23,7 @@ The system is coordinated by a central Supervisor and consists of five specializ
 - Supports multi-modal outputs (figures, tables, references)
 - Maintains traceable evidence linkage
 
-### (4) Mechanistic Analysis Agent (Mechanism_agent, implemented within RAG_agent)
+### (4) Mechanistic Analysis Module (logical agent, implemented within RAG_agent)
 - Extracts and organizes mechanistic knowledge from literature
 - Identifies element roles, interactions, and inconsistencies
 - Bridges fragmented literature into interpretable knowledge structures
