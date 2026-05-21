@@ -10,6 +10,17 @@
 
 数据源：
 - 默认从同目录下优先加载训练好的机器学习模型，且特征值与当前代码需一一对应。
+
+Machine Learning Agent (High-Temperature Alloy Oxidation Weight Gain Prediction)
+============================
+Supported Functions:
+- Single prediction (one): Parse single text or dictionary input and return predicted value in mg/cm²
+- Batch text prediction (batch_text): Process multiple texts separated by semicolons (;) or line breaks for item-by-item prediction
+- CSV batch prediction (csv_predict): Read CSV files, export results to predictions.csv and return the absolute path (including original rows and prediction columns)
+- CSV evaluation (csv_evaluate): The CSV file must contain real label columns (default matching fields: mass_gain/weight_gain/target/y/mg_cm2/gt/ground_truth). Return metrics in the format {"MAE":..., "RMSE":..., "R2":...}
+
+Data Source:
+- Pre-trained machine learning models are preferentially loaded from the same directory by default, with all feature values strictly matched to those defined in the current code.
 """
 from __future__ import annotations
 from typing import List, Dict

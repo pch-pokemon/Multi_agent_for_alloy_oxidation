@@ -3,12 +3,23 @@
 检索增强生成智能体 (高温合金氧化文献推荐系统)
 ============================
 支持能力：
-- 参考文献推荐，返回题目 + key finding + doi 以及总结
+- 参考文献推荐，返回题目 + key finding + doi 以及总结, 知识库文献分布全局观测
 - 系统默认基础检索推荐返回文献数量 n <= 5，可变参数 top-k（粗略检索） 与 top-n（精确检索）
 
 数据源：
 - 默认从同目录下优先加载 metdadata_ref_documents 文件（代码运行需要与这些文件配合使用）
-- 基座 Embedding 模型与 ReRank 模型: BGE_large_en_1.5v; BGE-rerank-large (可前往 Hugging Face 官网查看详细信息)
+- 基座 Embedding 模型与 ReRank 模型: SCI-BERT; BGE_large_en_1.5v; BGE-rerank-large (可前往 Hugging Face 官网查看详细信息)
+
+Retrieval-Augmented Generation Agent
+(High-temperature Alloy Oxidation Literature Recommendation System)
+============================
+Supported Capabilities:
+- Reference literature recommendation, returning titles, key findings, DOIs and summaries; global visualization of literature distribution in the knowledge base
+- The system defaults to recommending no more than 5 literatures via basic retrieval. Adjustable parameters include top-k for coarse retrieval and top-n for precise retrieval
+
+Data Sources:
+- The metadata reference document files are preferentially loaded from the same directory by default, which are essential for program operation
+- Base Embedding and ReRank Models: SCI-BERT, BGE_large_en_1.5v, BGE-rerank-large. More details are available on the official Hugging Face website.
 """
 
 from __future__ import annotations

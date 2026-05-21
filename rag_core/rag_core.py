@@ -8,7 +8,18 @@
 
 数据源：
 - 默认从同目录下优先加载 metadata数据库、doc数据库、chart图表数据库、向量数据文件（代码运行需要与这些文件配合使用）
-- 基座 Embedding 模型与 ReRank 模型: BGE_large_en_1.5v; BGE-rerank-large (可前往 Hugging Face 官网查看详细信息)
+- 基座 Embedding 模型与 ReRank 模型: SCI-BERT; BGE_large_en_1.5v; BGE-rerank-large (可前往 Hugging Face 官网查看详细信息)
+
+Retrieval-Augmented Generation Agent
+(High-temperature Alloy Oxidation Knowledge Q&A System)
+============================
+Supported Capabilities:
+- Basic knowledge answering, multimodal chart output, and reference literature retrieval
+- Optional parameters: debug = True (print debugging logs); render_markdown = True (render chart links)
+
+Data Sources:
+- Metadata database, document database, chart database and vector data files are loaded preferentially from the same directory by default (program execution requires matching these files)
+- Base Embedding and ReRank Models: SCI-BERT, BGE_large_en_1.5v, BGE-rerank-large. Detailed information is available on the official Hugging Face website.
 """
 
 from __future__ import annotations

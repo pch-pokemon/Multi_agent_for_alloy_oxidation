@@ -16,6 +16,22 @@
 
 数据源：
 - 默认从同目录下的文件夹下加载各个子智能体（代码运行需要与这些文件配合使用）
+
+Multi-Agent System for Superalloy Research
+Role: Coordinator
+============================
+Supported Functions:
+- Adaptively invoke machine learning agent, thermodynamic agent, RAG and reference recommendation sub-agents according to the complexity of user queries to accomplish problem-solving tasks
+
+Parameter Settings:
+- Debug parameter: Defaults to True, which prints the reasoning logic and task allocation process of the coordinator. When set to False, only final answers are displayed, fitting better for front-end interface display
+
+Key Optimizations:
+- Modified the underlying source code of langgraph.supervisor, and added independent output_mode functions for each sub-agent to control the visible scope of information for the coordinator, so as to reduce interference caused by redundant tool-calling logs from machine learning and thermodynamic agents
+- Revised the original langgraph.handoff source code, enabling the coordinator to attach detailed task descriptions when assigning tasks to subsequent agents, and improving readability under debug=True mode
+
+Data Source:
+- All sub-agents are loaded by default from folders in the same directory, and relevant files are required for normal program operation
 """
 
 # config 配置
@@ -31,7 +47,8 @@ api_key = os.getenv('API_KEY')
 # 为每一个智能体设定他们各自的 llm
 #-------------------------------
 """
-我们强烈建议在 没有使用 微调专业知识领域的llm时，为协调者设置为最高级的llm, 如GPT-5。作为大脑角色，其是思考设计问题如何解决的核心人物。
+我们强烈建议在 没有使用 微调专业知识领域的llm时，为协调者设置为最高级的llm, 如GPT-5。作为大脑角色，其是思考设计问题如何解决的核心人物
+We strongly recommend setting the coordinator to the most advanced LLM such as GPT-5 when not using LLMs fine-tuned for professional domain expertise. Acting as the brain role, it serves as the core entity responsible for thinking out and designing solutions to problems.
 """
 from langchain_openai import ChatOpenAI
 # load_dotenv('OPENAI.env')
