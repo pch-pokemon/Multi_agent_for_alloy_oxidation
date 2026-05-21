@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-热力学智能体
+热力学智能体（此处代码当前仅放置氧化物热力学数据的本地查询）
 ================================
 支持能力：
 - 精确 (exact)：按氧化物 + 温度(°C) 精确查找
@@ -12,6 +12,27 @@
 - 默认从同目录下优先加载 `thermo_data.xlsx`，若不存在则回退到 `thermo_data.csv`
 - 需要包含以下字段（大小写严格）：
 - oxide, temperature_C, deltaH_kJ, deltaS_J/K, deltaG_kJ, K, Log(K), pO2
+
+Thermodynamic Agent
+(Currently, this code only includes local querying of oxide thermodynamic data)
+================================================================================
+
+Supported functions:
+- Exact query: precisely retrieves data by oxide name and temperature (°C)
+- Fuzzy query: supports fuzzy matching of oxide names 
+  (e.g., Al2O3 ~> AL2O3, al203, "alumina", and similar strings)
+- Interpolation: if no exact data are available at the specified temperature, 
+  thermodynamic properties are interpolated as a function of temperature 
+  for each oxide independently
+- Curve generation: returns property curves within a specified temperature range, 
+  which can be used for plotting or further calculation
+- Batch query: queries multiple oxides and multiple temperature points at once
+
+Data source:
+- By default, the module first attempts to load `thermo_data.xlsx` 
+  from the same directory; if unavailable, it falls back to `thermo_data.csv`
+- The data file must contain the following fields with case-sensitive column names:
+  oxide, temperature_C, deltaH_kJ, deltaS_J/K, deltaG_kJ, K, Log(K), pO2
 """
 
 from __future__ import annotations
